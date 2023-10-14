@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PayPal Standard Integration</title>
+</head>
+<body>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+    <!-- Identify your PayPal Business email address -->
+    <input type="hidden" name="business" value="your_email@example.com">
+    
+    <!-- Buy Now -->
+    <input type="hidden" name="cmd" value="_xclick">
+    
+    <!-- Larger videos, item number, $100.00 -->
+    <input type="hidden" name="item_name" value="Product Name">
+    <input type="hidden" name="item_number" value="SKU001">
+    <input type="hidden" name="amount" value="19.99">
+    
+    <!-- (USD) -->
+    <input type="hidden" name="currency_code" value="USD">
+    
+    <!-- Redirect users to this page after the payment is complete -->
+    <input type="hidden" name="return" value="https://yourwebsite.com/thank-you.html">
+    
+    <!-- Redirect users to this page if the payment is canceled -->
+    <input type="hidden" name="cancel_return" value="https://yourwebsite.com/cancel.html">
+    
+    <!-- Enable payment pages to be viewed in the user's preferred language -->
+    <input type="hidden" name="lc" value="US">
+    
+    <!-- Enable the "Pay Now" button -->
+    <input type="image" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="PayPal - The safer, easier way to pay online">
+    
+    <!-- Inform PayPal to return transaction data to your site using IPN (optional) -->
+    <input type="hidden" name="notify_url" value="https://yourwebsite.com/ipn.php">
+
+</form>
+
+</body>
+</html>
